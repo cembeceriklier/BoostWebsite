@@ -13,11 +13,25 @@ import
   Route, Outlet, RouterProvider
 }
 from 'react-router-dom';
+import { useEffect } from "react";
 
 const Root = () => {
+  // useEffect(() => {
+  //   const adjustHeight = () => {
+  //     document.body.style.minHeight = `${window.innerHeight}px`;
+  //   };
+  
+  //   // Pencere boyutu değiştiğinde yüksekliği ayarla
+  //   window.addEventListener('resize', adjustHeight);
+  
+  //   // İlk render sonrası yüksekliği ayarla
+  //   adjustHeight();
+  
+  //   return () => window.removeEventListener('resize', adjustHeight);
+  // }, []);
 
   return (
-    <AppContainer>
+    <AppContainer className="xl:min-w-[320px]  ">
       <div>
         <Header/>
       </div>
@@ -49,7 +63,7 @@ const App = () => {
 
   return (
     <div>
-      <RouterProvider router={router} />;
+      <RouterProvider router={router} />
     </div>
   )
 }

@@ -9,7 +9,8 @@ export default defineConfig({
     macrosPlugin()
   ],
   server: {
-    port: 3000
+    port: 3000,
+    host:true,
   }
 })
 

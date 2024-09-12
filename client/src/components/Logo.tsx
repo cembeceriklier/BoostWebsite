@@ -2,41 +2,46 @@ import boosterlogo from "../assets/Logo.png";
 import tw from "twin.macro";
 const Logo = () => {
   return (
-    <LogoRef href="/">
-      <LogoImgContainer>
+    <Logo_Ref href="/">
+      <LogoImg_Container>
         <LogoImg src={boosterlogo}/>
-      </LogoImgContainer>
+      </LogoImg_Container>
       <LogoText>BOOSTER</LogoText>
-    </LogoRef>
+    </Logo_Ref>
   )
 }
 
-const LogoRef = tw.a`
+const Logo_Ref = tw.a`
+  // Container  
   flex
-  
   no-underline
   cursor-pointer
+  z-30
 `;
 
-const LogoImgContainer = tw.div` 
-  relative
-  left-0
-  top-0
+const LogoImg_Container = tw.div` 
+  // Container 
+  flex
+  items-center
+  justify-center
 
   w-7
-  h-7
+  h-auto
   mr-2
 `;
 
 const LogoImg = tw.img`
+  // Container
+  bottom-[1.5px]
   w-7
 `;
 
 const LogoText = tw.p`
-  inline-block
-  
+  // Container
+  inline-block  
   my-auto
-  
+
+  [font-weight: 500]
   text-white
   text-center
   no-underline

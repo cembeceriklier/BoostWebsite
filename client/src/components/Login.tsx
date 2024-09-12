@@ -11,34 +11,47 @@ const Login = () => {
 }
 
 const UserLoginContainer = tw.div`
-  flex
+  hidden
   items-center
   justify-center
+  lg:flex
 
-  text-white
   text-sm
-  lg:text-xs
   font-medium
   no-underline
-  cursor-pointer
+  z-30
 
-  lg:hidden
-
-  [min-width: 200px]
 `;
 
 const SignUpText = tw.a`
-  px-5
-  py-1.5
+  bg-black
+  text-white
+  hover:[color: #cfb2f6]
+  cursor-pointer
+  [font-weight: 500]
 
-  border
-  border-red-700
+  transition-all
+  ease-in-out
+  duration-200
+
   rounded-lg
 
-
+  px-4
+  p-1.5
+  shadow-lg
 `;
 
 const LoginText = tw.a`
-  mx-4
+  text-white
+  hover:[color: #dfdee0]
+  cursor-pointer
+
+  [font-weight: 500]
+
+  transition-all
+  ease-in-out
+  duration-200
+
+  mr-4
 `;
 export default Login

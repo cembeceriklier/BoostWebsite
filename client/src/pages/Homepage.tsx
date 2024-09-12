@@ -4,6 +4,7 @@ const Homepage = () => {
   return (
     <HomePageContainer>
       <Hero/>
+      
     </HomePageContainer>
   )
 }
@@ -12,7 +13,7 @@ export default Homepage
 
 const HomePageContainer = tw.div`
   relative
-  w-screen
+  w-full
   overflow-hidden
   
   bg-hero 
@@ -22,6 +23,7 @@ const HomePageContainer = tw.div`
   bg-center
   bg-cover
   
-  pt-20
+  pt-16
+  // backdrop-brightness-50
 `;
 

@@ -1,154 +1,159 @@
-import tw from "twin.macro"
+import { useEffect, useState } from 'react';
+import tw from 'twin.macro';
 import tPImg from "../assets/trustpılot.png";
+
 const Hero = () => {
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  useEffect(() => {
+    if (!hasAnimated) {
+      const timer = setTimeout(() => {
+        setHasAnimated(true);
+      }, 0);
+
+      return () => clearTimeout(timer);
+    }
+  }, [hasAnimated]);
+
   return (
-    <HeroContainer>
-      <LeftContainer>
-        <TextContainer>
-          <LeftLine/>
-          <Title_wide className="font-bold">
-          With a fast, energetic, and professional team, Turkey's friendly, reliable, and fastest Eloboost service!
-          </Title_wide>
-          <Title_mobile className="sm:uppercase">
-          Turkey's friendly, reliable, and fastest Eloboost service!
-          </Title_mobile>
+    <HeroContainer className="hero_container">
+      <LeftContainer className="left_container">
+        <TextContainer className="text_container">
+          <LeftLine className="left_line"/>
+          <Title_Container>
+            <Title className="animate-slideInFromLeft">
+              With a fast, energetic, and professional team, Turkey's friendly, reliable, and fastest <span className="text-black font-bold">Eloboost</span> service
+            </Title>
+            {/* <Title_mobile className="title_mobile uppercase font-bold">
+              Turkey's friendly, reliable, and fastest <span className="text-black font-bold">Eloboost</span> service!
+            </Title_mobile> */}
+          </Title_Container>
         </TextContainer>
-        <Description>
+        <Description className="description">
         </Description>
-        <TrustPilotContainer>
-          <TPText></TPText>
-          <TPImg src={tPImg}></TPImg>
+        <TrustPilotContainer className="trustpilot_container flex flex-row w-full">
+          <TPText className="tp_text text-white">See our<span className="font-bold"> 2,755</span> reviews on</TPText>
+          <TPImg className="tp_img ml-1" src={tPImg} alt="TrustPilot" />
+          <TPText className="text-white">Trustpilot</TPText>
         </TrustPilotContainer>
-        <GetStarted>
+        <GetStarted className="get_started">
         </GetStarted>
       </LeftContainer>
-      <RightContainer>
-        <HeroLolContainer></HeroLolContainer>
-        <HeroValorantContainer></HeroValorantContainer>
-        <HeroTFTContainer></HeroTFTContainer>
+      <RightContainer className="right_container">
+      
+          <HeroLolContainer className="hero-lol_container"></HeroLolContainer>
+          <HeroValorantContainer className="hero-valorant_container"></HeroValorantContainer>
+          <HeroTFTContainer className="hero-tft_container"></HeroTFTContainer>
+     
       </RightContainer>
     </HeroContainer>
   )
 }
 
-export default Hero
+export default Hero;
 
+// Styled-components with twin.macro
 const HeroContainer = tw.div`
   flex 
-  flex-row
-  sm:flex-col
-  md:flex-col
-  
-  w-full
+  flex-col
+  md:justify-start
 
-  pt-20
-  sm:pt-3
-  md:pt-3
+  w-full
+  sm:pt-6
+  md:pt-6
+  md:min-w-[550px]
+  sm:max-w-[450px]
+
   px-5
-  lg:px-10
-  xl:px-14
-  2xl:px-20
-  3xl:px-36
+  pt-5
+  cursor-default
+  h-full
 `;
 
 const LeftContainer = tw.div`
   flex
   flex-col
-  flex-1
+  lg:w-[50vw]
 
-  w-[50vw]
-  sm:w-full
-  md:w-full
 `;
 
 const TextContainer = tw.div`
   flex
   flex-row
+  justify-start
+  overflow-hidden
+  lg:min-w-[400px]
 `;
 
 const LeftLine = tw.div`
-  h-full
-  bg-red-700
+  flex
   
-  w-3
-  
-  mr-4
-  sm:mr-0
-  md:mr-0
+  bg-black
+  mr-3
+  min-w-[0.25rem]
+  overflow-hidden
+  z-20
 `;
 
-const Title_wide = tw.h1`
-  text-white
-
-  text-4xl
-  sm:text-xl
-  md:text-2xl
-  lg:text-3xl
-  
-  pl-2
-  sm:pl-0
-
-  sm:text-center
-  md:text-center
-
-  sm:hidden
+const Title_Container = tw.div`
+  overflow-hidden
 `;
 
-const Title_mobile = tw.h1`
-  text-white
-  font-semibold
-
-  text-4xl
-  sm:text-xl
-  md:text-2xl
-  lg:text-3xl
-
-  pl-2
-  sm:pl-0
-
-  sm:text-center
-  md:text-center
-
-  hidden
-  sm:flex
+const Title = tw.h1`
+  inline-block
+  text-white 
+  font-bold
+  lg:text-4xl
+  sm:text-2xl
+  md:text-3xl
+  z-10
 `;
+
+// const Title_mobile = tw.h1`
+//   between-sm-md:inline-block
+//   text-left
+//   md:text-3xl
+//   text-2xl
+//   hidden
+//   text-white
+// `;
 
 const TrustPilotContainer = tw.div`
   flex
   flex-row
+  justify-start
+  pt-3
 `;
 
 const TPText = tw.h1`
-
 `;
 
 const TPImg = tw.img`
-  w-20
+  w-5
 `;
 
 const RightContainer = tw.div`
-  flex
-  w-[50vw]
-  sm:w-full
-  md:w-full
+  absolute
+  w-full
+  h-[20%]
+  bottom-0
+  left-0
+  bg-[rgba(161,118,218, .7)]
+  shadow-lg
+
 `;
 
 const HeroLolContainer = tw.div`
-
 `;
 
 const HeroValorantContainer = tw.div`
-
 `;
 
 const HeroTFTContainer = tw.div`
-
 `;
 
 const Description = tw.div`
-
 `;
 
 const GetStarted = tw.div`
-
 `;
