@@ -205,7 +205,7 @@ const NavContainer = tw.nav`
   justify-center
   lg:flex
 
-  mr-5
+  mr-1
   p-0
   
   text-sm

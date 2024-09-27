@@ -80,7 +80,8 @@ const Header_Container = styled.div<HeaderProps>(({ isScrolled }) => [
 
     w-full
     h-16
-    px-5
+    px-10
+    sm:px-4
 
     // Animation
     transition-all 
@@ -118,7 +119,7 @@ const RightSide_Components = tw.div`
 
   // Responsive
   lg:justify-between
-  ml-10
+  ml-[1%]
 `;
 
 
@@ -167,7 +168,7 @@ const HamburgerMenu_Container = styled.div<NavbarMenuProps>(({ isClose }) => [
     
     // Background
     bg-[rgba(161,118,218,.40)!important]
-
+    
     // Animation
     transition-all 
     duration-300
@@ -177,7 +178,7 @@ const HamburgerMenu_Container = styled.div<NavbarMenuProps>(({ isClose }) => [
   `,
   // Responsive 
   isClose 
-    ? tw`w-full backdrop-blur-[50px] px-5 ` 
+    ? tw`w-full backdrop-blur-[50px] z-40 px-5 ` 
     : tw`w-0 backdrop-blur-none`,
 ]);
 

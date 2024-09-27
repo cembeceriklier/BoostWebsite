@@ -5,7 +5,7 @@ import {
   NotFound, Valorant, LeagueofLegends
 }
   from "./pages";
-import { Header, Footer } from "./containers";
+import { Header } from "./containers";
 import 
 {
   createBrowserRouter,
@@ -13,33 +13,17 @@ import
   Route, Outlet, RouterProvider
 }
 from 'react-router-dom';
-import { useEffect } from "react";
+
 
 const Root = () => {
-  // useEffect(() => {
-  //   const adjustHeight = () => {
-  //     document.body.style.minHeight = `${window.innerHeight}px`;
-  //   };
-  
-  //   // Pencere boyutu değiştiğinde yüksekliği ayarla
-  //   window.addEventListener('resize', adjustHeight);
-  
-  //   // İlk render sonrası yüksekliği ayarla
-  //   adjustHeight();
-  
-  //   return () => window.removeEventListener('resize', adjustHeight);
-  // }, []);
 
   return (
-    <AppContainer className="xl:min-w-[320px]  ">
+    <AppContainer className="xl:min-w-[320px]">
       <div>
         <Header/>
       </div>
       <div>
         <Outlet />
-      </div>
-      <div>
-        <Footer/>
       </div>
     </AppContainer>
   )

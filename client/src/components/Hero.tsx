@@ -1,80 +1,72 @@
-import { useEffect, useState } from 'react';
 import tw from 'twin.macro';
 import tPImg from "../assets/trustpılot.png";
+import { HiArrowCircleRight } from "react-icons/hi";
 
 const Hero = () => {
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  useEffect(() => {
-    if (!hasAnimated) {
-      const timer = setTimeout(() => {
-        setHasAnimated(true);
-      }, 0);
-
-      return () => clearTimeout(timer);
-    }
-  }, [hasAnimated]);
 
   return (
     <HeroContainer className="hero_container">
       <LeftContainer className="left_container">
         <TextContainer className="text_container">
-          <LeftLine className="left_line"/>
+          <LeftLine className="left_line animate-slideInFromLeft" />
           <Title_Container>
             <Title className="animate-slideInFromLeft">
               With a fast, energetic, and professional team, Turkey's friendly, reliable, and fastest <span className="text-black font-bold">Eloboost</span> service
             </Title>
-            {/* <Title_mobile className="title_mobile uppercase font-bold">
-              Turkey's friendly, reliable, and fastest <span className="text-black font-bold">Eloboost</span> service!
-            </Title_mobile> */}
           </Title_Container>
         </TextContainer>
         <Description className="description">
         </Description>
         <TrustPilotContainer className="trustpilot_container flex flex-row w-full">
-          <TPText className="tp_text text-white">See our<span className="font-bold"> 2,755</span> reviews on</TPText>
+          <TPText className="tp_text text-white">See our <span className="font-bold">2,755</span> reviews on</TPText>
           <TPImg className="tp_img ml-1" src={tPImg} alt="TrustPilot" />
           <TPText className="text-white">Trustpilot</TPText>
         </TrustPilotContainer>
-        <GetStarted className="get_started">
+        <GetStarted className="flex get_started mt-4 items-center md:flex-col md:items-start">
+          <a className='text-white text-sm bg-black flex px-5 py-4 rounded-2xl hover:[color: #dfdee0] cursor-pointer'>Select Your Game</a>
+          <a className='flex ml-3 lg:ml-4 md:mt-3 justify-center items-center cursor-pointer'>
+            <div className='flex z-20 items-center justify-center hover:before:animate-ping hover:before:absolute hover:before:size-5 hover:before:z-10 hover:before:bg-white hover:before:rounded-full hover:before:duration-1000 transition-all ease-in-out'>
+              <HiArrowCircleRight className='z-40' size={25} fill='purple' />
+            </div>
+            <h4 className='ml-1 text-white text-sm'>How It Works</h4>
+          </a>
         </GetStarted>
       </LeftContainer>
-      <RightContainer className="right_container">
-      
-          <HeroLolContainer className="hero-lol_container"></HeroLolContainer>
-          <HeroValorantContainer className="hero-valorant_container"></HeroValorantContainer>
-          <HeroTFTContainer className="hero-tft_container"></HeroTFTContainer>
-     
+      <RightContainer className="right_container mt-20">
+        <div className="relative h-60 bg-cover bg-center bg-no-repeat bg-fixed">
+          <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent "></div>
+        </div>
+        
       </RightContainer>
     </HeroContainer>
-  )
-}
+  );
+};
 
 export default Hero;
 
-// Styled-components with twin.macro
-const HeroContainer = tw.div`
+const HeroContainer = tw.div` 
   flex 
   flex-col
   md:justify-start
-
+  sm:justify-center
   w-full
-  sm:pt-6
-  md:pt-6
   md:min-w-[550px]
-  sm:max-w-[450px]
-
-  px-5
-  pt-5
+  pt-40
+  sm:pt-32
   cursor-default
   h-full
+  bg-hero 
+  bg-no-repeat
+  bg-center
+  bg-cover
 `;
 
 const LeftContainer = tw.div`
   flex
   flex-col
   lg:w-[50vw]
-
+  pl-10
+  sm:pl-4
 `;
 
 const TextContainer = tw.div`
@@ -87,7 +79,6 @@ const TextContainer = tw.div`
 
 const LeftLine = tw.div`
   flex
-  
   bg-black
   mr-3
   min-w-[0.25rem]
@@ -109,15 +100,6 @@ const Title = tw.h1`
   z-10
 `;
 
-// const Title_mobile = tw.h1`
-//   between-sm-md:inline-block
-//   text-left
-//   md:text-3xl
-//   text-2xl
-//   hidden
-//   text-white
-// `;
-
 const TrustPilotContainer = tw.div`
   flex
   flex-row
@@ -125,35 +107,17 @@ const TrustPilotContainer = tw.div`
   pt-3
 `;
 
-const TPText = tw.h1`
-`;
+const TPText = tw.h1``;
 
 const TPImg = tw.img`
   w-5
 `;
 
 const RightContainer = tw.div`
-  absolute
-  w-full
-  h-[20%]
-  bottom-0
-  left-0
-  bg-[rgba(161,118,218, .7)]
-  shadow-lg
-
+  rounded-tl-3xl
+  border-b-0
 `;
 
-const HeroLolContainer = tw.div`
-`;
+const Description = tw.div``;
 
-const HeroValorantContainer = tw.div`
-`;
-
-const HeroTFTContainer = tw.div`
-`;
-
-const Description = tw.div`
-`;
-
-const GetStarted = tw.div`
-`;
+const GetStarted = tw.div``;

@@ -11,6 +11,7 @@ export default {
       'md': {'min': '600px', 'max': '819px'},
       'xl': {'max': '1068px'},
       'between-sm-md': {'max': '819px'},
+      'brand-responsive': {'max': '819px'}
     },
     extend: {
       backgroundImage: {
@@ -18,6 +19,14 @@ export default {
       },
       dropdownIcon: {
         'dropdown': "url('src/assets/')"
+      },
+      colors: {
+        customPurpleDark: '#a176da',
+        customPurpleLight: '#dfdee0',
+        customPurple1: '#daccdb',
+        customBlue1: '#1b1f35',
+        textColor1: '#9CA3AF',
+        textColor2: '#d8dce3',
       },
       keyframes: {
         fadeIn: {
@@ -37,7 +46,7 @@ export default {
       animation: {
         fadeIn: 'fadeIn 1s ease-in-out forwards',
         fadeOut: 'fadeOut 2s ease-in-out forwards',
-        slideInFromLeft: 'slideInFromLeft .5s ease-in-out forwards',
+        slideInFromLeft: 'slideInFromLeft .7s ease-in-out forwards',
       },
     },
   },
