@@ -17,15 +17,21 @@ Bu projeyi çalıştırmadan önce bilgisayarınızda şu yazılımların kurulu
 ## Kurulum
 Projeyi bilgisayarınıza klonlayıp çalıştırmak için aşağıdaki adımları izleyin:
 
-### 1. Repository'yi klonlayın:
-  ```bash
-  git clone https://github.com/cembeceriklier/BoostWebsite.git
-  cd BoostWebsite```
+1. Repository'yi klonlayın:
+  
+    ```bash
+    git clone https://github.com/cembeceriklier/BoostWebsite.git
+    cd BoostWebsite
+    ```
 
-### 2. Bağımlılıkları Yükleyin:
-  ```bash
-  npm install```
+2. Bağımlılıkları yükleyin:
 
-### 3. Geliştirme sunucusunu başlatın:
-  ```bash
-  npm run dev```
+    ```bash
+    npm install
+    ```
+
+3. Geliştirme sunucusunu başlatın:
+
+    ```bash
+    npm run dev
+    ```
