@@ -1,12 +1,12 @@
-## Proje Hakkında
-Bu proje, modern web geliştirme araçları olan **React**, **TypeScript** ve **Tailwind CSS** kullanılarak oluşturulmuş bir web sitesi projesidir. Proje, hızlı geliştirme süreci ve esnek yapı için **Vite** ile desteklenmiştir. 
+## About the Project
+This project is a website built using modern web development tools like **React**, **TypeScript**, and **Tailwind CSS**. The project is supported by **Vite** for a fast development process and flexible structure.
 
-Geliştirme aşamasındadır...
+It is currently under development...
 
-## Kurulum
-Projeyi bilgisayarınıza klonlayıp çalıştırmak için aşağıdaki adımları izleyin:
+## Installation
+Follow the steps below to clone and run the project on your local machine:
 
-1. Repository'yi klonlayın:
+1. Clone the repository:
   
     ```bash
     git clone https://github.com/cembeceriklier/BoostWebsite.git
@@ -14,13 +14,13 @@ Projeyi bilgisayarınıza klonlayıp çalıştırmak için aşağıdaki adımlar
     cd client
     ```
 
-2. Bağımlılıkları yükleyin:
+2. Install dependencies:
 
     ```bash
     npm install
     ```
 
-3. Geliştirme sunucusunu başlatın:
+3. Start the development server:
 
     ```bash
     npm run dev
